@@ -1,6 +1,1 @@
-@MiniProjekt_API_HostAddress = http://localhost:5295
 
-GET {{MiniProjekt_API_HostAddress}}/ApiContext/
-Accept: application/json
-
-###
