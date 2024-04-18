@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiniProjekt_API.Data;
 
@@ -10,9 +11,11 @@ using MiniProjekt_API.Data;
 namespace MiniProjekt_API.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    partial class ApiContextModelSnapshot : ModelSnapshot
+    [Migration("20240417195023_Changed_InterestLinks_to_InterestUrls")]
+    partial class Changed_InterestLinks_to_InterestUrls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,15 +26,15 @@ namespace MiniProjekt_API.Migrations
 
             modelBuilder.Entity("InterestsPeople", b =>
                 {
-                    b.Property<int>("InterestsId")
+                    b.Property<int>("InterestssId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PeopleId")
+                    b.Property<int>("PeopleeId")
                         .HasColumnType("int");
 
-                    b.HasKey("InterestsId", "PeopleId");
+                    b.HasKey("InterestssId", "PeopleeId");
 
-                    b.HasIndex("PeopleId");
+                    b.HasIndex("PeopleeId");
 
                     b.ToTable("InterestsPeople");
                 });
@@ -44,10 +47,10 @@ namespace MiniProjekt_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("InterestsId")
+                    b.Property<int>("InterestssId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PeopleId")
+                    b.Property<int>("PeopleeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Url")
@@ -56,9 +59,9 @@ namespace MiniProjekt_API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InterestsId");
+                    b.HasIndex("InterestssId");
 
-                    b.HasIndex("PeopleId");
+                    b.HasIndex("PeopleeId");
 
                     b.ToTable("InterestUrls");
                 });
@@ -119,39 +122,39 @@ namespace MiniProjekt_API.Migrations
                 {
                     b.HasOne("MiniProjekt_API.Models.Interests", null)
                         .WithMany()
-                        .HasForeignKey("InterestsId")
+                        .HasForeignKey("InterestssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MiniProjekt_API.Models.People", null)
                         .WithMany()
-                        .HasForeignKey("PeopleId")
+                        .HasForeignKey("PeopleeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("MiniProjekt_API.Models.InterestUrls", b =>
                 {
-                    b.HasOne("MiniProjekt_API.Models.Interests", "Interests")
-                        .WithMany("InterestUrls")
-                        .HasForeignKey("InterestsId")
+                    b.HasOne("MiniProjekt_API.Models.Interests", "Interestss")
+                        .WithMany("InterestUrlss")
+                        .HasForeignKey("InterestssId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MiniProjekt_API.Models.People", "People")
+                    b.HasOne("MiniProjekt_API.Models.People", "Peoplee")
                         .WithMany()
-                        .HasForeignKey("PeopleId")
+                        .HasForeignKey("PeopleeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Interests");
+                    b.Navigation("Interestss");
 
-                    b.Navigation("People");
+                    b.Navigation("Peoplee");
                 });
 
             modelBuilder.Entity("MiniProjekt_API.Models.Interests", b =>
                 {
-                    b.Navigation("InterestUrls");
+                    b.Navigation("InterestUrlss");
                 });
 #pragma warning restore 612, 618
         }

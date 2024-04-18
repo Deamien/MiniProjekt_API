@@ -5,21 +5,21 @@ namespace MiniProjekt_API.Data
 {
     public class ApiContext : DbContext
     {
-        public DbSet<Person> Person { get; set; }
-        public DbSet<Link> Links { get; set; }
-        public DbSet<Interest> Interests { get; set; }
+        public DbSet<People> People { get; set; }
+        public DbSet<InterestUrls> InterestUrls { get; set; }
+        public DbSet<Interests> Interests { get; set; }
 
         public ApiContext(DbContextOptions<ApiContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>()
+            modelBuilder.Entity<People>()
                 .HasKey(p => p.Id);
 
-            modelBuilder.Entity<Link>()
+            modelBuilder.Entity<InterestUrls>()
                 .HasKey(l => l.Id);
 
-            modelBuilder.Entity<Interest>()
+            modelBuilder.Entity<Interests>()
                 .HasKey(i => i.Id);
         }
     }
