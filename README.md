@@ -24,5 +24,12 @@ JSON Input
 /persons/{personId}/interests/{interestId} post connects a person to an interest
 
 
+
+
+
+ER DIAGRAM
 ![Er Diagram Mini_API](https://github.com/Deamien/MiniProjekt_API/assets/25642231/99006145-e909-409c-a5ee-9c6a98b48e54)
+
+
+UML DIAGRAM
 ![UML Diagram Mini_API](https://github.com/Deamien/MiniProjekt_API/assets/25642231/c5b74ecd-d565-4fa8-a1c6-ac373e3e7bfb)
