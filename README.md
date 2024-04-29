@@ -20,7 +20,9 @@ POST endpoints:
 JSON Input
 
 /people/{id}/interests  posts a new interest based on the personid
+
 /people/{personId}/interests/{interestId}/urls  posts a new urls based on the personid and interestid
+
 /persons/{personId}/interests/{interestId} post connects a person to an interest
 
 
