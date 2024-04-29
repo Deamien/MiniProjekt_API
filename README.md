@@ -10,15 +10,11 @@ GET endpoints:
 /urls  lists the urls
 
 /interests  lists the interests
-
-
-
-
-
-
-
-
-
+                
+                  
+                   
+                  
+                
 POST endpoints:
 
 
