@@ -1,13 +1,19 @@
 GET endpoints:
 
+
 /people  lists the people
+
 /people/{id}/interests/urls  lists urls based on the personid
+
 /people/{id}/interests  lists interests based on the personid
+
 /urls  lists the urls
+
 /interests  lists the interests
 
 
 POST endpoints:
+
 
 JSON Input
 
